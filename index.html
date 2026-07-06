@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secureview Tech — Security &amp; Smart-Home Integration | Metro Detroit</title>
+<meta name="description" content="One team for your home or business: cameras, alarms, access control, smart lighting, audio, and the network behind it all. Serving metro Detroit for over a decade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html" aria-label="Secureview Tech home">
+      <img class="brand__shield" src="assets/logo-shield.png" alt="">
+      <span>
+        <span class="brand__name">SECUREVIEW<span>TECH</span></span>
+        <span class="brand__tag">Your Security Is Our Priority</span>
+      </span>
+    </a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href="index.html" class="is-active">Home</a>
+      <span class="has-drop">
+        <a href="residential.html" aria-haspopup="true">Services</a>
+        <span class="drop">
+          <a href="residential.html"><b>For Your Home</b><small>Cameras, alarms, lighting, audio &amp; Wi-Fi</small></a>
+          <a href="commercial.html"><b>For Your Business</b><small>Surveillance, access control &amp; networks</small></a>
+        </span>
+      </span>
+      <a href="work.html">Our Work</a>
+      <a href="help.html">Help</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav__cta">
+      <span class="nav__phone"><small>Call or text</small><b>(586) 230-0772</b></span>
+      <a href="contact.html" class="btn btn--primary">Free estimate</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="residential.html">Services — For Your Home</a>
+  <a href="commercial.html" class="sub">For Your Business</a>
+  <a href="work.html">Our Work</a>
+  <a href="help.html">Help</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn--primary btn--wide">Get a free estimate</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <svg class="nodes" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="#2E6BF0" stroke-width="1" fill="none" opacity="0.55">
+      <path d="M120,90 L360,180 L300,360 L120,90 M360,180 L600,120 L840,220 M600,120 L560,340 L300,360 M840,220 L1080,160 M840,220 L900,420 L560,340 M1080,160 L1120,400 L900,420"/>
+    </g>
+    <g fill="#2E6BF0">
+      <circle cx="120" cy="90" r="4"/><circle cx="360" cy="180" r="5"/><circle cx="600" cy="120" r="4"/>
+      <circle cx="840" cy="220" r="5"/><circle cx="1080" cy="160" r="4"/><circle cx="300" cy="360" r="4"/>
+      <circle cx="560" cy="340" r="6" fill="#E01E2B"/><circle cx="900" cy="420" r="4"/><circle cx="1120" cy="400" r="4"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow eyebrow--light">Security &amp; smart-home integration · Metro Detroit</span>
+        <h1>One team wires your whole property — and makes it all <em>work together.</em></h1>
+        <p class="hero__sub">Cameras, alarms, access control, lighting, audio, and the network behind them — designed, installed, and supported by Secureview Tech. Protecting metro Detroit homes and businesses for over a decade.</p>
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn--primary">Get a free estimate →</a>
+          <a href="tel:15862300772" class="btn btn--ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+            (586) 230-0772
+          </a>
+        </div>
+        <div class="hero__paths">
+          <a href="residential.html" class="pathchip"><span class="dot"></span><b>For your home</b> — peace of mind, done cleanly</a>
+          <a href="commercial.html" class="pathchip"><span class="dot dot--red"></span><b>For your business</b> — protect, monitor, scale</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__photo">
+          <img src="assets/work-lighting-dusk.jpg" alt="A metro Detroit home at dusk with a full exterior smart-lighting installation by Secureview Tech">
+          <span class="photo-tag">Real install · Metro Detroit</span>
+        </div>
+        <div class="hero__badge">
+          <span class="stars">★★★★★</span>
+          <b>5.0</b>
+          <small>Rated on Google</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trustbar">
+  <div class="trustbar__row">
+    <span class="trustbar__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5l8-3z"/></svg><b>10+ years</b> in business</span>
+    <span class="trustbar__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17l-6.2 3.6 1.6-6.7L2.2 8.9l6.9-.6z"/></svg><b>5.0</b> on Google</span>
+    <span class="trustbar__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Licensed &amp; insured <span class="ph">[add license #]</span></span>
+    <span class="trustbar__item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18v4H3zM3 11h8v8H3zM13 11h8v8h-8z"/></svg>Residential &amp; commercial</span>
+  </div>
+</div>
+
+<!-- ===== CLUSTERS / BACKBONE SIGNATURE ===== -->
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <span class="eyebrow eyebrow--light eyebrow--center">One connected system</span>
+      <h2>Everything on one backbone, from one team you trust</h2>
+      <p>Most companies mount a camera and leave. We design the whole system — so your security, comfort, and connectivity actually talk to each other, and one number fixes all of it.</p>
+    </div>
+    <div class="backbone">
+      <div class="backbone__line" aria-hidden="true"></div>
+      <div class="clusters">
+        <div class="cluster">
+          <div class="cluster__node"></div>
+          <h3>Security &amp; Surveillance</h3>
+          <p class="cluster__lead">Eyes on everything, day or night — and a system that alerts you, not just records.</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 6a9.8 9.8 0 00-9 6 9.8 9.8 0 0018 0 9.8 9.8 0 00-9-6zm0 10a4 4 0 110-8 4 4 0 010 8z"/></svg>Security camera systems</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7v3l-2 3v1h18v-1l-2-3V9a7 7 0 00-7-7zm0 20a3 3 0 003-3H9a3 3 0 003 3z"/></svg>Alarm &amp; intrusion systems</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 10V7a6 6 0 0112 0v3h1a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8a2 2 0 012-2h1zm2 0h8V7a4 4 0 00-8 0z"/></svg>Access control</li>
+          </ul>
+        </div>
+        <div class="cluster">
+          <div class="cluster__node"></div>
+          <h3>Comfort &amp; Living</h3>
+          <p class="cluster__lead">The parts of a smart property people actually enjoy every day.</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 21h6v-1H9zM12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg>Smart lighting</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 00-9 9v5a2 2 0 002 2h2v-7H5a7 7 0 0114 0h-2v7h2a2 2 0 002-2v-5a9 9 0 00-9-9z"/></svg>Whole-home &amp; business audio</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v12H4zM2 18h20v2H2zM9 8h6v4H9z"/></svg>Smart-home integration</li>
+          </ul>
+        </div>
+        <div class="cluster">
+          <div class="cluster__node"></div>
+          <h3>The Backbone</h3>
+          <p class="cluster__lead">The network everything runs on. Get this right and the rest just works.</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18a2 2 0 110 4 2 2 0 010-4zM5 13a10 10 0 0114 0l-2 2a7 7 0 00-10 0zM2 9a15 15 0 0120 0l-2 2a12 12 0 00-16 0z"/></svg>Networking &amp; Wi-Fi</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v4H4zM4 10h16v4H4zM4 16h16v4H4zM7 6h.01M7 12h.01M7 18h.01"/></svg>Structured cabling &amp; racks</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 5 5 .7-3.6 3.5.9 5.3L12 19l-5.2 2.5.9-5.3L4 12.7 9 12z"/></svg>Remote viewing setup</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AUDIENCE SPLIT ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <span class="eyebrow eyebrow--center">Two paths, one standard</span>
+      <h2>Built for your home. Built for your business.</h2>
+      <p>A family protecting what matters and a business protecting its bottom line need different systems. Pick your path.</p>
+    </div>
+    <div class="split">
+      <div class="pathcard pathcard--home">
+        <div class="pathcard__top">
+          <span class="pathcard__kicker">For your home</span>
+          <h3>Peace of mind, installed cleanly</h3>
+        </div>
+        <p class="pathcard__desc">Discreet, tidy installs that respect your home. See your cameras from your phone, automate your lights, and never wonder who's at the door.</p>
+        <ul class="pathcard__list">
+          <li>Home camera systems</li><li>Video doorbells</li>
+          <li>Alarm systems</li><li>Smart lighting</li>
+          <li>Whole-home audio</li><li>Wi-Fi that reaches everywhere</li>
+        </ul>
+        <div class="pathcard__foot"><a class="pathcard__link" href="residential.html">Explore home services →</a></div>
+      </div>
+      <div class="pathcard pathcard--biz">
+        <div class="pathcard__top">
+          <span class="pathcard__kicker">For your business</span>
+          <h3>Protect, monitor, and scale</h3>
+        </div>
+        <p class="pathcard__desc">Loss prevention, liability coverage, and systems sized to grow with you — backed by maintenance agreements so you're never left offline.</p>
+        <ul class="pathcard__list">
+          <li>Multi-camera surveillance</li><li>License-plate capture</li>
+          <li>Access control</li><li>Alarm systems</li>
+          <li>Business networking</li><li>Maintenance agreements</li>
+        </ul>
+        <div class="pathcard__foot"><a class="pathcard__link" href="commercial.html">Explore business services →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUR WORK ===== -->
+<section class="section on-mist">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our work</span>
+      <h2>Real installs, not stock photos</h2>
+      <p>Every property is different. Here's a look at work across metro Detroit — swap in your own project photos as you go.</p>
+    </div>
+    <div class="gallery">
+      <div class="gcard">
+        <div class="gcard__img"><img src="assets/work-lighting-dusk.jpg" alt="Full exterior smart-lighting install on a large home at dusk"></div>
+        <div class="gcard__cap"><b>Full exterior lighting</b><span class="tag tag--home">Residential</span></div>
+      </div>
+      <div class="gcard">
+        <div class="gcard__ph">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 6a9.8 9.8 0 00-9 6 9.8 9.8 0 0018 0 9.8 9.8 0 00-9-6zm0 10a4 4 0 110-8 4 4 0 010 8z"/></svg>
+          <b>Add photo</b><small>Residential camera install</small>
+        </div>
+        <div class="gcard__cap"><b>Home camera system</b><span class="tag tag--home">Residential</span></div>
+      </div>
+      <div class="gcard">
+        <div class="gcard__ph">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18v4H3zM3 11h8v8H3zM13 11h8v8h-8z"/></svg>
+          <b>Add photo</b><small>Storefront / commercial job</small>
+        </div>
+        <div class="gcard__cap"><b>Commercial surveillance</b><span class="tag tag--biz">Commercial</span></div>
+      </div>
+      <div class="gcard">
+        <div class="gcard__ph">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v4H4zM4 10h16v4H4zM4 16h16v4H4z"/></svg>
+          <b>Add photo</b><small>Network rack / cabling</small>
+        </div>
+        <div class="gcard__cap"><b>Structured cabling</b><span class="tag tag--biz">Commercial</span></div>
+      </div>
+      <div class="gcard">
+        <div class="gcard__ph">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M6 10V7a6 6 0 0112 0v3h1a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8a2 2 0 012-2z"/></svg>
+          <b>Add photo</b><small>Access control panel</small>
+        </div>
+        <div class="gcard__cap"><b>Access control</b><span class="tag tag--biz">Commercial</span></div>
+      </div>
+      <div class="gcard">
+        <div class="gcard__ph">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg>
+          <b>Add photo</b><small>Smart-home / lighting job</small>
+        </div>
+        <div class="gcard__cap"><b>Smart lighting</b><span class="tag tag--home">Residential</span></div>
+      </div>
+    </div>
+    <p class="center mt-48"><a href="work.html" class="btn btn--dark">See more of our work →</a></p>
+  </div>
+</section>
+
+<!-- ===== REVIEWS (REAL) ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head sec-head--center">
+      <span class="eyebrow eyebrow--center">5.0 on Google · Real customers</span>
+      <h2>What metro Detroit says about us</h2>
+    </div>
+    <div class="reviews">
+      <div class="review">
+        <span class="review__stars">★★★★★</span>
+        <p class="review__text">"The best company in town. Professional service and reasonable prices. Very friendly team. Highly recommended. Thank you Randy!"</p>
+        <div class="review__who"><span class="review__ava">RH</span><span><b>Rodney Hanna</b><small>Local Guide · Google</small></span></div>
+      </div>
+      <div class="review">
+        <span class="review__stars">★★★★★</span>
+        <p class="review__text">"Best camera man — he does a great job and is a smooth worker. He did my house and it's perfect. Five stars."</p>
+        <div class="review__who"><span class="review__ava">GJ</span><span><b>George Jumaah</b><small>Google review</small></span></div>
+      </div>
+      <div class="review">
+        <span class="review__stars">★★★★★</span>
+        <p class="review__text">"I called and in no time he came and installed the best cameras I've ever seen."</p>
+        <div class="review__who"><span class="review__ava">R</span><span><b>Rayzek</b><small>Google review</small></span></div>
+      </div>
+    </div>
+    <p class="reviews__foot">Rated <b>5.0 out of 5</b> across every Google review. <a href="https://www.google.com/search?q=secure+view+tech" style="color:var(--blue);font-weight:600">Read them all →</a></p>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow eyebrow--light">How it works</span>
+      <h2>From first call to final walkthrough</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step__n"></div><h4>Free estimate</h4><p>Call or text and tell us what you're protecting. We'll talk through options with no pressure and no fee.</p></div>
+      <div class="step"><div class="step__n"></div><h4>Site survey &amp; design</h4><p>We walk the property, map coverage and blind spots, and design a system that fits the space and the budget.</p></div>
+      <div class="step"><div class="step__n"></div><h4>Clean install</h4><p>Tidy, professional installation with minimal disruption — then a full walkthrough so you know how everything works.</p></div>
+    </div>
+    <p class="center mt-48"><a href="contact.html" class="btn btn--primary">Start with a free estimate →</a></p>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section--tight">
+  <div class="wrap">
+    <div class="cta">
+      <span class="eyebrow eyebrow--light">Metro Detroit · residential &amp; commercial</span>
+      <h2>Let's protect what matters to you.</h2>
+      <p>One team for your cameras, alarms, automation, and network — installed right and supported for the long haul. Get a free estimate today.</p>
+      <div class="cta__actions">
+        <a href="contact.html" class="btn btn--primary">Get a free estimate →</a>
+        <a href="tel:15862300772" class="btn btn--ghost">Call (586) 230-0772</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="foot__brand"><img src="assets/logo-shield.png" alt=""><b>SECUREVIEW<span>TECH</span></b></div>
+        <p class="foot__blurb">Security and smart-home integration for homes and businesses across metro Detroit. Cameras, alarms, access control, lighting, audio, and networking — one team, one standard.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="residential.html">For your home</a></li>
+          <li><a href="commercial.html">For your business</a></li>
+          <li><a href="work.html">Our work</a></li>
+          <li><a href="help.html">Help &amp; FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; your footage</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div class="foot__contact">
+        <h5>Get in touch</h5>
+        <div><a href="tel:15862300772">(586) 230-0772</a><br><a href="tel:12488783376">(248) 878-3376</a></div>
+        <div><a href="mailto:secureview.tech@gmail.com">secureview.tech@gmail.com</a></div>
+        <div style="color:#94A3BE">Serving Macomb &amp; Oakland counties<br>Mon–Fri, 9 AM onward</div>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>© 2026 Secureview Tech. All rights reserved. <span class="ph" style="color:var(--red)">[Confirm license # &amp; legal business name]</span></span>
+      <span class="foot__legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="terms.html">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:15862300772">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+  Tap to call Secureview Tech
+</a>
+
+<script>
+function toggleMenu(btn){
+  var m=document.getElementById('mobileNav');
+  var open=m.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+</script>
+</body>
+</html>
