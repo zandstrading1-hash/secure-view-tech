@@ -1,18 +1,17 @@
 # Secureview Tech — Website
 
-Static site (HTML/CSS/JS). No build step. The logo and photo are embedded directly
-inside the code, so there are NO separate image files to upload or break.
+Static site (HTML/CSS/JS) deployed with GitHub Pages. No build step is required.
+Brand, social-preview, and project-photo assets live under `assets/`.
 
 ## Files (upload ALL of them to your repo root)
-index.html, residential.html, commercial.html, work.html, about.html, help.html,
-contact.html, privacy.html, accessibility.html, terms.html, styles.css, README.md
+Deploy the repository root, including every HTML page, `styles.css`, `robots.txt`,
+`sitemap.xml`, `site.webmanifest`, and the complete `assets/` folder.
 
 ## See it live (GitHub Pages)
 Repo → Settings → Pages → Source: "Deploy from a branch", Branch: main, Folder: / (root), Save.
-Your site: https://<username>.github.io/<repo-name>/
+Current site: https://zandstrading1-hash.github.io/secure-view-tech/
 
-## Before launch — replace anything marked in RED on the pages
-- License # and insurer · warranty wording · your About story + team photo
-- Real install photos in the gallery (work.html)
-- Wire the contact form to a form service (Formspree) — it currently opens the visitor's email
-- Have a Michigan attorney review privacy.html and terms.html
+## Account-owner launch steps
+
+See `LAUNCH-CHECKLIST.md` for the FormSubmit activation, optional custom domain,
+domain email, Search Console, and legal-review handoff.
