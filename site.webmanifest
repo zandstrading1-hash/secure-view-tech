@@ -1,11 +1,11 @@
 {
   "name": "Secureview Tech",
   "short_name": "Secureview",
-  "description": "Security and smart-property integration across metro Detroit.",
+  "description": "Integrated security, networking, audio visual, and smart systems across metro Detroit.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#09142d",
-  "theme_color": "#09142d",
+  "background_color": "#060b13",
+  "theme_color": "#060b13",
   "icons": [
     {
       "src": "assets/secureview-logo.png",
