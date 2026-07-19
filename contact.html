@@ -73,7 +73,7 @@
     <h1>Get a free estimate.</h1><p>Tell us what you are protecting and how you would like to be reached. Prefer to talk now? Call or text either number below.</p></div></section><section class="section"><div class="wrap"><div class="contact-grid">
    <form class="formcard" id="estimateForm" action="https://formsubmit.co/secureview.tech@gmail.com" method="POST">
      <h3 style="font-family:var(--display);font-size:22px;margin-bottom:6px">Request your free estimate</h3>
-     <p style="color:var(--slate);font-size:14.5px;margin-bottom:22px">Takes about 30 seconds. No obligation.</p>
+     <p style="color:var(--slate);font-size:14.5px;margin-bottom:22px">Select every service you need. We will tailor the follow-up to your project.</p>
      <input type="hidden" name="_subject" value="New Secureview Tech estimate request">
      <input type="hidden" name="_template" value="table">
      <input type="hidden" name="_next" value="https://zandstrading1-hash.github.io/secure-view-tech/thanks.html">
@@ -84,11 +84,115 @@
        <div><label for="f_phone">Phone <span aria-hidden="true">*</span></label><input type="tel" id="f_phone" name="phone" placeholder="(586) 000-0000" autocomplete="tel" inputmode="tel" required></div>
        <div><label for="f_email">Email</label><input type="email" id="f_email" name="email" placeholder="you@email.com" autocomplete="email"></div>
      </div>
-     <div class="field field--row">
-       <div><label for="f_type">Property type</label><select id="f_type" name="property_type"><option>Home</option><option>Business</option></select></div>
-       <div><label for="f_cams">Roughly how many cameras?</label><select id="f_cams" name="camera_count"><option>Not sure yet</option><option>1–4</option><option>5–8</option><option>9+</option></select></div>
+     <div class="field"><label for="f_type">Property type</label><select id="f_type" name="property_type"><option>Home</option><option>Business</option><option>New construction</option><option>Other</option></select></div>
+
+     <fieldset class="service-picker" aria-describedby="serviceHelp serviceError">
+       <legend>Which services do you need? <span aria-hidden="true">*</span></legend>
+       <p class="service-picker__help" id="serviceHelp">Select all that apply. Specific questions will appear for each selection.</p>
+       <div class="service-options">
+         <label class="service-option"><input class="service-toggle" type="checkbox" name="services[]" value="Security cameras and surveillance" data-panel="service-cameras" aria-controls="service-cameras" aria-expanded="false"><span><b>Security cameras</b><small>Surveillance, recording and remote viewing</small></span></label>
+         <label class="service-option"><input class="service-toggle" type="checkbox" name="services[]" value="Alarm and intrusion systems" data-panel="service-alarms" aria-controls="service-alarms" aria-expanded="false"><span><b>Alarm systems</b><small>Doors, windows, motion and alerts</small></span></label>
+         <label class="service-option"><input class="service-toggle" type="checkbox" name="services[]" value="Access control" data-panel="service-access" aria-controls="service-access" aria-expanded="false"><span><b>Access control</b><small>Keypads, fobs, mobile entry and intercoms</small></span></label>
+         <label class="service-option"><input class="service-toggle" type="checkbox" name="services[]" value="Networking and structured cabling" data-panel="service-network" aria-controls="service-network" aria-expanded="false"><span><b>Networking &amp; cabling</b><small>Wi-Fi, data wiring, switches and racks</small></span></label>
+         <label class="service-option"><input class="service-toggle" type="checkbox" name="services[]" value="Audio visual" data-panel="service-av" aria-controls="service-av" aria-expanded="false"><span><b>Audio visual</b><small>TVs, displays, speakers and video walls</small></span></label>
+         <label class="service-option"><input class="service-toggle" type="checkbox" name="services[]" value="Smart lighting and automation" data-panel="service-lighting" aria-controls="service-lighting" aria-expanded="false"><span><b>Smart lighting</b><small>Interior, exterior, scenes and automation</small></span></label>
+       </div>
+       <p class="service-error" id="serviceError" role="alert"></p>
+     </fieldset>
+
+     <div class="service-details" id="serviceDetails" aria-live="polite">
+       <section class="service-panel" id="service-cameras" data-service-panel aria-hidden="true" aria-labelledby="service-cameras-title">
+         <div class="service-panel__head"><span>01</span><div><h4 id="service-cameras-title">Security camera details</h4><p>Tell us the coverage you have in mind.</p></div></div>
+         <div class="detail-grid">
+           <div class="field"><label for="f_cams">Approximate camera count</label><select id="f_cams" name="camera_count" disabled><option>Not sure yet</option><option>1–4</option><option>5–8</option><option>9–16</option><option>17+</option></select></div>
+           <fieldset class="detail-group"><legend>Coverage areas</legend><div class="detail-checks">
+             <label><input type="checkbox" name="camera_coverage[]" value="Exterior" disabled>Exterior</label>
+             <label><input type="checkbox" name="camera_coverage[]" value="Interior" disabled>Interior</label>
+             <label><input type="checkbox" name="camera_coverage[]" value="Doorbell or entry" disabled>Doorbell / entry</label>
+             <label><input type="checkbox" name="camera_coverage[]" value="Parking or license plate" disabled>Parking / license plate</label>
+             <label><input type="checkbox" name="camera_coverage[]" value="Remote viewing" disabled>Remote viewing</label>
+             <label><input type="checkbox" name="camera_coverage[]" value="Upgrade existing cameras" disabled>Upgrade existing system</label>
+           </div></fieldset>
+         </div>
+       </section>
+
+       <section class="service-panel" id="service-alarms" data-service-panel aria-hidden="true" aria-labelledby="service-alarms-title">
+         <div class="service-panel__head"><span>02</span><div><h4 id="service-alarms-title">Alarm system details</h4><p>Choose the protection and alerting you need.</p></div></div>
+         <div class="detail-grid">
+           <div class="field"><label for="f_alarm_status">Current setup</label><select id="f_alarm_status" name="alarm_current_setup" disabled><option>No existing alarm</option><option>Replace or upgrade an alarm</option><option>Add to an existing alarm</option><option>Not sure</option></select></div>
+           <fieldset class="detail-group"><legend>Alarm needs</legend><div class="detail-checks">
+             <label><input type="checkbox" name="alarm_needs[]" value="Door and window sensors" disabled>Door / window sensors</label>
+             <label><input type="checkbox" name="alarm_needs[]" value="Motion detection" disabled>Motion detection</label>
+             <label><input type="checkbox" name="alarm_needs[]" value="Phone notifications" disabled>Phone notifications</label>
+             <label><input type="checkbox" name="alarm_needs[]" value="Keypads or sirens" disabled>Keypads / sirens</label>
+             <label><input type="checkbox" name="alarm_needs[]" value="Monitoring options" disabled>Monitoring options</label>
+             <label><input type="checkbox" name="alarm_needs[]" value="Smoke or environmental sensors" disabled>Environmental sensors</label>
+           </div></fieldset>
+         </div>
+       </section>
+
+       <section class="service-panel" id="service-access" data-service-panel aria-hidden="true" aria-labelledby="service-access-title">
+         <div class="service-panel__head"><span>03</span><div><h4 id="service-access-title">Access control details</h4><p>Tell us how many entries and how people should get in.</p></div></div>
+         <div class="detail-grid">
+           <div class="field"><label for="f_doors">Number of controlled doors</label><select id="f_doors" name="access_door_count" disabled><option>Not sure yet</option><option>1</option><option>2–4</option><option>5–10</option><option>11+</option></select></div>
+           <fieldset class="detail-group"><legend>Entry methods</legend><div class="detail-checks">
+             <label><input type="checkbox" name="access_methods[]" value="Keypad" disabled>Keypad</label>
+             <label><input type="checkbox" name="access_methods[]" value="Cards or fobs" disabled>Cards / fobs</label>
+             <label><input type="checkbox" name="access_methods[]" value="Mobile access" disabled>Mobile access</label>
+             <label><input type="checkbox" name="access_methods[]" value="Video intercom" disabled>Video intercom</label>
+             <label><input type="checkbox" name="access_methods[]" value="Entry event log" disabled>Entry event log</label>
+             <label><input type="checkbox" name="access_methods[]" value="Upgrade existing access control" disabled>Upgrade existing system</label>
+           </div></fieldset>
+         </div>
+       </section>
+
+       <section class="service-panel" id="service-network" data-service-panel aria-hidden="true" aria-labelledby="service-network-title">
+         <div class="service-panel__head"><span>04</span><div><h4 id="service-network-title">Networking and cabling details</h4><p>Choose the infrastructure work your property needs.</p></div></div>
+         <div class="detail-grid">
+           <div class="field"><label for="f_network_size">Property size</label><select id="f_network_size" name="network_property_size" disabled><option>Not sure</option><option>Under 2,000 sq. ft.</option><option>2,000–5,000 sq. ft.</option><option>5,000–10,000 sq. ft.</option><option>Over 10,000 sq. ft.</option></select></div>
+           <fieldset class="detail-group"><legend>Network needs</legend><div class="detail-checks">
+             <label><input type="checkbox" name="network_needs[]" value="Wi-Fi coverage" disabled>Wi-Fi coverage</label>
+             <label><input type="checkbox" name="network_needs[]" value="New data cabling" disabled>New data cabling</label>
+             <label><input type="checkbox" name="network_needs[]" value="Network rack or cabinet" disabled>Rack / cabinet</label>
+             <label><input type="checkbox" name="network_needs[]" value="Switches or access points" disabled>Switches / access points</label>
+             <label><input type="checkbox" name="network_needs[]" value="New construction prewire" disabled>New-construction prewire</label>
+             <label><input type="checkbox" name="network_needs[]" value="Troubleshooting or upgrade" disabled>Troubleshooting / upgrade</label>
+           </div></fieldset>
+         </div>
+       </section>
+
+       <section class="service-panel" id="service-av" data-service-panel aria-hidden="true" aria-labelledby="service-av-title">
+         <div class="service-panel__head"><span>05</span><div><h4 id="service-av-title">Audio visual details</h4><p>Tell us what people should be able to see and hear.</p></div></div>
+         <div class="detail-grid">
+           <div class="field"><label for="f_av_rooms">Rooms or display areas</label><select id="f_av_rooms" name="av_area_count" disabled><option>Not sure yet</option><option>1</option><option>2–4</option><option>5–8</option><option>9+</option></select></div>
+           <fieldset class="detail-group"><legend>Audio visual needs</legend><div class="detail-checks">
+             <label><input type="checkbox" name="av_needs[]" value="TV or display installation" disabled>TV / display installation</label>
+             <label><input type="checkbox" name="av_needs[]" value="Whole-home or multi-zone audio" disabled>Multi-zone audio</label>
+             <label><input type="checkbox" name="av_needs[]" value="Commercial video wall" disabled>Commercial video wall</label>
+             <label><input type="checkbox" name="av_needs[]" value="Conference room" disabled>Conference room</label>
+             <label><input type="checkbox" name="av_needs[]" value="Outdoor audio or display" disabled>Outdoor audio / display</label>
+             <label><input type="checkbox" name="av_needs[]" value="Upgrade existing audio visual" disabled>Upgrade existing system</label>
+           </div></fieldset>
+         </div>
+       </section>
+
+       <section class="service-panel" id="service-lighting" data-service-panel aria-hidden="true" aria-labelledby="service-lighting-title">
+         <div class="service-panel__head"><span>06</span><div><h4 id="service-lighting-title">Smart lighting details</h4><p>Choose the spaces and controls you want included.</p></div></div>
+         <div class="detail-grid">
+           <div class="field"><label for="f_lighting_status">Project type</label><select id="f_lighting_status" name="lighting_project_type" disabled><option>New lighting system</option><option>Upgrade existing lighting</option><option>Add automation or controls</option><option>Not sure</option></select></div>
+           <fieldset class="detail-group"><legend>Lighting needs</legend><div class="detail-checks">
+             <label><input type="checkbox" name="lighting_needs[]" value="Interior lighting" disabled>Interior lighting</label>
+             <label><input type="checkbox" name="lighting_needs[]" value="Exterior lighting" disabled>Exterior lighting</label>
+             <label><input type="checkbox" name="lighting_needs[]" value="Feature or LED lighting" disabled>Feature / LED lighting</label>
+             <label><input type="checkbox" name="lighting_needs[]" value="Schedules and scenes" disabled>Schedules / scenes</label>
+             <label><input type="checkbox" name="lighting_needs[]" value="Mobile app control" disabled>Mobile app control</label>
+             <label><input type="checkbox" name="lighting_needs[]" value="Occupancy or motion control" disabled>Occupancy / motion control</label>
+           </div></fieldset>
+         </div>
+       </section>
      </div>
-     <div class="field"><label for="f_msg">What are you looking to do?</label><textarea id="f_msg" name="message" placeholder="e.g. cameras around the house plus a doorbell, or full coverage for my shop"></textarea></div>
+
+     <div class="field"><label for="f_msg">Anything else we should know?</label><textarea id="f_msg" name="message" placeholder="Tell us about the property, timing, current equipment, or any special concerns."></textarea></div>
      <button class="btn btn--primary btn--wide" type="submit">Send my request →</button>
      <p class="form-note">By sending this request, you agree that Secureview Tech may contact you about it. See our <a href="privacy.html">privacy notice</a>.</p>
      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -107,15 +211,56 @@
    var form=document.getElementById('estimateForm');
    var status=document.getElementById('formStatus');
    var button=form.querySelector('button[type="submit"]');
+   var serviceToggles=Array.from(form.querySelectorAll('.service-toggle'));
+   var serviceError=document.getElementById('serviceError');
+
+   function syncService(toggle){
+     var panel=document.getElementById(toggle.dataset.panel);
+     if(!panel)return;
+     panel.classList.toggle('is-visible',toggle.checked);
+     panel.setAttribute('aria-hidden',String(!toggle.checked));
+     toggle.setAttribute('aria-expanded',String(toggle.checked));
+     panel.querySelectorAll('input,select,textarea').forEach(function(field){field.disabled=!toggle.checked;});
+   }
+
+   function validateServices(){
+     var selected=serviceToggles.some(function(toggle){return toggle.checked;});
+     serviceToggles[0].setCustomValidity(selected?'':'Select at least one service.');
+     serviceError.textContent=selected?'':'Please select at least one service.';
+     return selected;
+   }
+
+   serviceToggles.forEach(function(toggle){
+     syncService(toggle);
+     toggle.addEventListener('change',function(){syncService(toggle);validateServices();});
+   });
+
+   form.addEventListener('reset',function(){
+     window.setTimeout(function(){
+       serviceToggles.forEach(syncService);
+       serviceToggles[0].setCustomValidity('');
+       serviceError.textContent='';
+     },0);
+   });
+
    form.addEventListener('submit',async function(event){
-     if(!form.checkValidity()) return;
+     validateServices();
+     if(!form.checkValidity()){
+       event.preventDefault();
+       form.reportValidity();
+       return;
+     }
      event.preventDefault();
      button.disabled=true;
      button.textContent='Sending…';
      status.className='form-status';
      status.textContent='Sending your request…';
      try{
-       var payload=Object.fromEntries(new FormData(form).entries());
+       var payload={};
+       new FormData(form).forEach(function(value,key){
+         var cleanKey=key.replace(/\[\]$/,'');
+         payload[cleanKey]=payload[cleanKey]?payload[cleanKey]+', '+value:value;
+       });
        var response=await fetch('https://formsubmit.co/ajax/secureview.tech@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
        var result=await response.json();
        if(!response.ok||result.success===false) throw new Error('Submission failed');
