@@ -50,7 +50,7 @@
       <a href="contact.html" class="is-active">Contact</a>
     </nav>
     <div class="nav__cta">
-      <span class="nav__phone"><small>Call or text</small><b>(586) 230-0772</b></span>
+      <a class="nav__phone" href="tel:15862300772" aria-label="Call or text Secureview Tech at 586-230-0772"><small>Call or text</small><b>(586) 230-0772</b></a>
       <a href="contact.html" class="btn btn--primary">Free estimate</a>
       <button class="burger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
     </div>
@@ -85,6 +85,7 @@
        <div><label for="f_email">Email</label><input type="email" id="f_email" name="email" placeholder="you@email.com" autocomplete="email"></div>
      </div>
      <div class="field"><label for="f_type">Property type</label><select id="f_type" name="property_type"><option>Home</option><option>Business</option><option>New construction</option><option>Other</option></select></div>
+     <div class="field conditional-field" id="otherPropertyField" hidden><label for="f_other_property">What type of property is it? <span aria-hidden="true">*</span></label><input type="text" id="f_other_property" name="other_property_type" placeholder="For example: warehouse, church, restaurant, or mixed-use building" autocomplete="off" disabled></div>
 
      <fieldset class="service-picker" aria-describedby="serviceHelp serviceError">
        <legend>Which services do you need? <span aria-hidden="true">*</span></legend>
@@ -213,6 +214,17 @@
    var button=form.querySelector('button[type="submit"]');
    var serviceToggles=Array.from(form.querySelectorAll('.service-toggle'));
    var serviceError=document.getElementById('serviceError');
+   var propertyType=document.getElementById('f_type');
+   var otherPropertyField=document.getElementById('otherPropertyField');
+   var otherPropertyInput=document.getElementById('f_other_property');
+
+   function syncPropertyType(){
+     var isOther=propertyType.value==='Other';
+     otherPropertyField.hidden=!isOther;
+     otherPropertyInput.disabled=!isOther;
+     otherPropertyInput.required=isOther;
+     if(!isOther)otherPropertyInput.value='';
+   }
 
    function syncService(toggle){
      var panel=document.getElementById(toggle.dataset.panel);
@@ -234,12 +246,15 @@
      syncService(toggle);
      toggle.addEventListener('change',function(){syncService(toggle);validateServices();});
    });
+   syncPropertyType();
+   propertyType.addEventListener('change',syncPropertyType);
 
    form.addEventListener('reset',function(){
      window.setTimeout(function(){
        serviceToggles.forEach(syncService);
        serviceToggles[0].setCustomValidity('');
        serviceError.textContent='';
+       syncPropertyType();
      },0);
    });
 
