@@ -47,6 +47,31 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,h4{font-family:var(--display);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin:0}
+
+/* Client-requested Title Case for every short heading and interface title. */
+h1,h2,h3,h4,h5,h6,
+.eyebrow,
+.btn,
+.navlinks,
+.mobile,
+.nav__phone small,
+.trustbar__item,
+.tech-shot b,
+.pathcard__kicker,
+.pathcard__link,
+.reviews__foot a,
+.crumbs,
+.project-photo>span,
+.project-lightbox figcaption a,
+.foot h5,
+.foot li a,
+.callbar,
+.infoline small,
+.service-option b,
+legend,
+summary{
+  text-transform:capitalize;
+}
 p{margin:0}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}

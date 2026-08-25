@@ -96,7 +96,7 @@ body::before{
   border:1px solid rgba(90,139,194,.26);border-radius:20px;background:rgba(8,16,27,.78);
   box-shadow:0 34px 80px -36px #000,0 0 0 1px rgba(53,214,234,.035) inset;
 }
-.tech-shot{position:relative;display:block;overflow:hidden;border:1px solid rgba(73,136,203,.4);border-radius:12px;background:#050a11;min-width:0}
+.tech-shot{position:relative;display:block;overflow:hidden;border:1px solid rgba(73,136,203,.4);border-radius:12px;background:#050a11;min-width:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:zoom-in}
 .tech-shot::before,.tech-shot::after{content:"";position:absolute;z-index:3;width:22px;height:22px;border-color:#35d6ea;pointer-events:none}
 .tech-shot::before{left:8px;top:8px;border-left:2px solid #35d6ea;border-top:2px solid #35d6ea}
 .tech-shot::after{right:8px;bottom:8px;border-right:2px solid #35d6ea;border-bottom:2px solid #35d6ea}
@@ -109,6 +109,12 @@ body::before{
 .tech-shot--monitoring{grid-area:monitoring}
 .tech-shot--lighting{grid-area:lighting}
 .tech-shot--network img,.tech-shot--monitoring img,.tech-shot--lighting img{object-position:center}
+.home-lightbox{width:100vw;max-width:none;height:100vh;max-height:none;margin:0;padding:12px;border:0;background:transparent;overflow:hidden}
+.home-lightbox::backdrop{background:rgba(1,5,10,.9);backdrop-filter:blur(5px)}
+.home-lightbox__panel{position:relative;display:grid;width:100%;height:100%;place-items:center}
+.home-lightbox__panel>img{display:block;width:auto;height:auto;max-width:calc(100vw - 24px);max-height:calc(100vh - 24px);object-fit:contain;object-position:center;transform:none!important}
+.home-lightbox__close{position:absolute;z-index:2;top:8px;right:8px;display:grid;width:46px;height:46px;padding:0;place-items:center;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(5,10,17,.88);color:#fff;font-size:30px;line-height:1;cursor:pointer}
+.home-lightbox__close:hover,.home-lightbox__close:focus-visible{background:var(--blue)}
 .system-flow{position:absolute;left:50%;bottom:-42px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#71849e;white-space:nowrap}
 .system-flow i{display:block;width:54px;height:1px;background:linear-gradient(90deg,#2c7df0,#35d6ea);position:relative}
 .system-flow i::after{content:"";position:absolute;right:-1px;top:-2px;width:5px;height:5px;border-radius:50%;background:#35d6ea;box-shadow:0 0 9px #35d6ea}
