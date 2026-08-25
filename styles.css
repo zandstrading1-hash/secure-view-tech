@@ -99,7 +99,7 @@ p{margin:0}
 
 .has-drop{position:relative}
 .has-drop>a::after{content:"▾";font-size:10px;margin-left:6px;color:var(--slate-2)}
-.drop{position:absolute;top:calc(100% + 8px);left:0;min-width:230px;background:#fff;border:1px solid var(--line);
+.drop{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--line);
   border-radius:12px;box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);
   transition:.2s var(--ease)}
 .has-drop:hover .drop,.has-drop:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
@@ -243,8 +243,7 @@ p{margin:0}
 /* grouped project gallery */
 .work-groups{display:grid;gap:64px}
 .project-group{display:grid;gap:20px}
-.project-group__head{display:flex;align-items:center;gap:12px}
-.project-group__head>span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--blue);border:1px solid var(--line);border-radius:999px;padding:6px 8px}
+.project-group__head{display:flex;align-items:center}
 .project-group__head h2{font-size:clamp(24px,3vw,34px)}
 .project-group__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .project-group__grid--three{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -255,19 +254,19 @@ p{margin:0}
 .project-photo:hover img{filter:brightness(.82)}
 .project-photo:hover>span,.project-photo:focus-visible>span{opacity:1;transform:none}
 .project-photo:focus-visible{outline:3px solid var(--blue-bright);outline-offset:3px}
-.project-lightbox{width:min(1120px,calc(100% - 28px));max-width:none;max-height:calc(100vh - 28px);padding:0;border:1px solid rgba(255,255,255,.18);border-radius:18px;background:#07101b;color:#fff;box-shadow:0 30px 100px rgba(0,0,0,.62)}
+.project-lightbox{width:auto;max-width:calc(100vw - 24px);height:auto;max-height:calc(100vh - 24px);padding:0;border:0;background:transparent;color:#fff;box-shadow:none;overflow:visible}
 .project-lightbox::backdrop{background:rgba(1,5,10,.88);backdrop-filter:blur(5px)}
-.project-lightbox__panel{position:relative;padding:14px}
-.project-lightbox figure{margin:0;display:grid;grid-template-rows:minmax(0,1fr) auto;max-height:calc(100vh - 58px)}
-.project-lightbox figure>img{display:block;width:100%;height:100%;max-height:calc(100vh - 220px);object-fit:contain;object-position:center;transform:none!important;border-radius:11px;background:#020509}
-.project-lightbox figcaption{padding:18px 58px 10px}
+.project-lightbox__panel{position:relative;display:flex;justify-content:center}
+.project-lightbox figure{margin:0;display:flex;flex-direction:column;align-items:stretch;width:max-content;max-width:calc(100vw - 24px);max-height:calc(100vh - 24px);border:1px solid rgba(255,255,255,.18);border-radius:14px;overflow:hidden;background:#07101b;box-shadow:0 30px 100px rgba(0,0,0,.62)}
+.project-lightbox figure>img{display:block;width:auto;height:auto;max-width:calc(100vw - 24px);max-height:calc(100vh - 175px);object-fit:contain;object-position:center;transform:none!important;background:transparent}
+.project-lightbox figcaption{padding:16px 22px 18px;max-width:min(900px,calc(100vw - 24px))}
 .project-lightbox h2{font-size:24px;margin-bottom:7px}
 .project-lightbox p{color:#b7c6d9;font-size:14px;max-width:70em}
 .project-lightbox figcaption a{display:inline-block;margin-top:10px;color:#64e7f5;font-weight:700}
 .project-lightbox__close,.project-lightbox__nav{position:absolute;z-index:2;display:grid;place-items:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:rgba(5,10,17,.84);color:#fff;cursor:pointer}
-.project-lightbox__close{top:24px;right:24px;font-size:28px;line-height:1}
-.project-lightbox__nav{top:45%;font-size:36px}
-.project-lightbox__nav--prev{left:26px}.project-lightbox__nav--next{right:26px}
+.project-lightbox__close{top:12px;right:12px;font-size:28px;line-height:1}
+.project-lightbox__nav{top:42%;font-size:36px}
+.project-lightbox__nav--prev{left:12px}.project-lightbox__nav--next{right:12px}
 .project-lightbox__close:hover,.project-lightbox__nav:hover{background:var(--blue)}
 .lightbox-open{overflow:hidden}
 
@@ -286,10 +285,8 @@ p{margin:0}
 .reviews__foot b{color:var(--ink)}
 
 /* process steps */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;counter-reset:s}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
 .step{background:rgba(255,255,255,.03);border:1px solid var(--line-dark);border-radius:var(--radius);padding:26px 24px}
-.step__n{counter-increment:s;font-family:var(--mono);font-size:13px;color:var(--blue-bright);letter-spacing:.1em}
-.step__n::before{content:"0" counter(s)}
 .step h4{color:#fff;font-size:18px;margin:12px 0 8px}
 .step p{color:#AFBDD6;font-size:14.5px}
 
@@ -434,15 +431,14 @@ details.qa .qa__body{padding:0 22px 20px;color:#33405A;font-size:15.5px}
   .project-group__grid,.project-group__grid--three,.project-group__grid--four{grid-template-columns:1fr;gap:12px}
   .project-photo{aspect-ratio:4/3}
   .project-photo>span{opacity:1;transform:none}
-  .project-lightbox{width:calc(100% - 14px);max-height:calc(100vh - 14px);border-radius:13px}
-  .project-lightbox__panel{padding:8px}
-  .project-lightbox figure{max-height:calc(100vh - 30px)}
-  .project-lightbox figure>img{max-height:calc(100vh - 245px)}
-  .project-lightbox figcaption{padding:14px 10px 8px}
+  .project-lightbox{max-width:calc(100vw - 12px);max-height:calc(100vh - 12px)}
+  .project-lightbox figure{max-width:calc(100vw - 12px);max-height:calc(100vh - 12px)}
+  .project-lightbox figure>img{max-width:calc(100vw - 12px);max-height:calc(100vh - 205px)}
+  .project-lightbox figcaption{padding:13px 14px 15px;max-width:calc(100vw - 12px)}
   .project-lightbox h2{font-size:20px}
-  .project-lightbox__close{top:16px;right:16px}
+  .project-lightbox__close{top:10px;right:10px}
   .project-lightbox__nav{top:38%;width:40px;height:40px}
-  .project-lightbox__nav--prev{left:14px}.project-lightbox__nav--next{right:14px}
+  .project-lightbox__nav--prev{left:8px}.project-lightbox__nav--next{right:8px}
   html{scroll-padding-top:74px}
   body{padding-bottom:calc(56px + env(safe-area-inset-bottom));overflow-x:hidden}
   body.menu-open{overflow:hidden}

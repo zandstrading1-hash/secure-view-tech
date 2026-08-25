@@ -9,7 +9,7 @@ Deploy the repository root, including every HTML page, `styles.css`, `robots.txt
 
 ## See it live (GitHub Pages)
 Repo → Settings → Pages → Source: "Deploy from a branch", Branch: main, Folder: / (root), Save.
-Current site: https://zandstrading1-hash.github.io/secure-view-tech/
+Current site: https://secureviewtec.com/
 
 ## Account-owner launch steps
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zandstrading1-hash.github.io/secure-view-tech/sitemap.xml
+Sitemap: https://secureviewtec.com/sitemap.xml
