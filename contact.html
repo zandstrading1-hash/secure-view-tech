@@ -74,7 +74,7 @@
    <form class="formcard" id="estimateForm" action="https://formsubmit.co/secureview.tech@gmail.com" method="POST">
      <h3 style="font-family:var(--display);font-size:22px;margin-bottom:6px">Request Your Free Estimate</h3>
      <p style="color:var(--slate);font-size:14.5px;margin-bottom:22px">Select every service you need. We will tailor the follow-up to your project.</p>
-     <input type="hidden" name="_subject" value="New Secureview Tech estimate request">
+     <input type="hidden" name="_subject" value="New Secureview Tech Website Estimate">
      <input type="hidden" name="_template" value="table">
      <input type="hidden" name="_next" value="https://secureviewtec.com/thanks.html">
      <input type="hidden" name="_url" value="https://secureviewtec.com/contact.html">
@@ -217,6 +217,11 @@
    var propertyType=document.getElementById('f_type');
    var otherPropertyField=document.getElementById('otherPropertyField');
    var otherPropertyInput=document.getElementById('f_other_property');
+   var emailLabels={
+     name:'Customer Name',phone:'Phone Number',email:'Email Address',property_type:'Property Type',other_property_type:'Other Property Type',services:'Services Requested',
+     camera_count:'Camera Count',camera_coverage:'Camera Coverage',alarm_current_setup:'Current Alarm Setup',alarm_needs:'Alarm Needs',access_door_count:'Controlled Door Count',access_methods:'Access Methods',
+     network_property_size:'Property Size',network_needs:'Networking And Cabling Needs',av_area_count:'Audio Visual Areas',av_needs:'Audio Visual Needs',lighting_project_type:'Lighting Project Type',lighting_needs:'Lighting Needs',message:'Additional Project Details'
+   };
 
    function syncPropertyType(){
      var isOther=propertyType.value==='Other';
@@ -267,23 +272,37 @@
      }
      event.preventDefault();
      button.disabled=true;
+     form.setAttribute('aria-busy','true');
      button.textContent='Sending…';
      status.className='form-status';
      status.textContent='Sending your request…';
      try{
-       var payload={};
+       var customerName=document.getElementById('f_name').value.trim();
+       var customerEmail=document.getElementById('f_email').value.trim();
+       var selectedProperty=propertyType.value==='Other'&&otherPropertyInput.value.trim()?otherPropertyInput.value.trim():propertyType.value;
+       var payload={
+         _subject:'New Secureview Tech Website Estimate — '+customerName+' — '+selectedProperty,
+         _template:'table',
+         _url:'https://secureviewtec.com/contact.html'
+       };
+       if(customerEmail)payload._replyto=customerEmail;
        new FormData(form).forEach(function(value,key){
+         if(key.charAt(0)==='_')return;
          var cleanKey=key.replace(/\[\]$/,'');
-         payload[cleanKey]=payload[cleanKey]?payload[cleanKey]+', '+value:value;
+         if(value==='')return;
+         var displayKey=emailLabels[cleanKey]||cleanKey.replace(/_/g,' ').replace(/\b\w/g,function(letter){return letter.toUpperCase();});
+         payload[displayKey]=payload[displayKey]?payload[displayKey]+', '+value:value;
        });
        var response=await fetch('https://formsubmit.co/ajax/secureview.tech@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
        var result=await response.json();
        if(!response.ok||result.success===false) throw new Error('Submission failed');
        form.reset();
+       form.removeAttribute('aria-busy');
        status.className='form-status is-success';
-       status.textContent='Thank you — your request was sent. Secureview Tech will contact you using the information provided.';
-       button.textContent='Request sent';
+       status.textContent='Thank you — your request was sent directly to Secureview Tech. The team will contact you using the information provided.';
+       button.textContent='Request Sent';
      }catch(error){
+       form.removeAttribute('aria-busy');
        status.className='form-status is-error';
        status.innerHTML='We could not send the form. Please call <a href="tel:15862300772">(586) 230-0772</a> or email <a href="mailto:secureview.tech@gmail.com">secureview.tech@gmail.com</a>.';
        button.disabled=false;
